@@ -108,6 +108,7 @@ def main():
 
         repeated_fail_count = 0
         click(copy_name_position.get_middle())
+        sleep(0.5)
         name = get_clipboard()
 
         power = read_numbers_at_bounding_box(image, constants.BoundingBoxes.POWER)
