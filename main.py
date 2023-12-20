@@ -60,7 +60,7 @@ def main():
     if own_position == 0:
         own_position = int(
             input(
-                "Could not read the current rank of the account. " "Please enter it: "
+                "Could not read the current rank of the account. Please enter it: "
             )
         )
 
@@ -123,7 +123,7 @@ def main():
             continue
 
         # It seems that the scrolling gets put off slowly over time.
-        # Subtracting 1 from LIST_ENTRY_MIDDLE_UP did not fix it, so we "subtract" 0.1.
+        # Adding 1 from LIST_ENTRY_MIDDLE_UP did not fix it, so we "add" 0.1.
         if current_rank % 100 == 0:
             scroll_low_level(
                 constants.Coordinates.LIST_ENTRY_MIDDLE,
@@ -163,11 +163,11 @@ if __name__ == "__main__":
     ADB.shell = f"{ADB.adb_path} -s {ADB.device_name} shell"
 
     if not os.path.isfile(pytesseract.tesseract_cmd):
-        print("The environment variable TESSERACT_BINARY is not set. Exiting.")
+        print("The environment variable TESSERACT_BINARY is not valid. Exiting.")
         exit(0)
 
     if not os.path.isfile(ADB.adb_path):
-        print("The environment variable TESSERACT_BINARY is not set. Exiting.")
+        print("The environment variable ADB_BINARY is not valid. Exiting.")
         exit(0)
 
     main()
