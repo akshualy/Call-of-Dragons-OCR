@@ -14,7 +14,7 @@ class Images:
 
 
 class BoundingBoxes:
-    POWER = BoundingBox(min_x=115, min_y=560, max_x=355, max_y=590)
+    POWER = BoundingBox(min_x=115, min_y=515, max_x=355, max_y=550)
     MERIT = BoundingBox(min_x=800, min_y=560, max_x=1020, max_y=590)
     LORD_ID = BoundingBox(min_x=910, min_y=268, max_x=1019, max_y=288)
     ALLIANCE_MEMBERS = BoundingBox(min_x=360, min_y=610, max_x=455, max_y=635)

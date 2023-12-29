@@ -112,7 +112,8 @@ def main():
         name = get_clipboard()
 
         power = read_numbers_at_bounding_box(image, constants.BoundingBoxes.POWER)
-        merit = read_numbers_at_bounding_box(image, constants.BoundingBoxes.MERIT)
+        # merit = read_numbers_at_bounding_box(image, constants.BoundingBoxes.MERIT)
+        merit = 0
         lord_id = read_numbers_at_bounding_box(image, constants.BoundingBoxes.LORD_ID)
 
         go_back()
