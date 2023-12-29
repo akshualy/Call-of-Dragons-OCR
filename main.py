@@ -1,4 +1,3 @@
-from datetime import datetime
 import os
 from time import sleep
 
@@ -12,6 +11,7 @@ from emulator.adb_integration import get_clipboard
 from emulator.adb_integration import get_grayscale_screen
 from emulator.adb_integration import go_back
 from emulator.adb_integration import scroll_low_level
+from exporters import get_exporter
 from logic.logic import ALLIANCE_INFORMATION
 from logic.logic import go_to_rankings_interface_from_known_screens
 from logic.logic import leave_rankings_interface_return_current_screen
@@ -140,19 +140,7 @@ def main():
         )
         current_rank += 1
 
-    file_name = (
-        f"{datetime.now().strftime('%Y-%m-%d_%H-%M')}_"
-        f"{ALLIANCE_INFORMATION.alliance_name.replace(' ', '-')}"
-    )
-    with open(file_name + ".csv", "w", encoding="utf-8") as csv:
-        csv.write("Lord ID,Name,Power,Merit\n")
-        for lord_id, name_power_merit in data.items():
-            csv.write(
-                f"{lord_id},"
-                f"{name_power_merit['name']},"
-                f"{name_power_merit['power']},"
-                f"{name_power_merit['merit']}\n"
-            )
+    get_exporter().export(user_data=data)
 
 
 if __name__ == "__main__":
