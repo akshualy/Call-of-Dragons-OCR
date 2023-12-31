@@ -1,10 +1,10 @@
 from datetime import datetime
 
-from exporters import Exporter
+from exporters import AbstractExporter
 from logic.logic import ALLIANCE_INFORMATION
 
 
-class CsvExporter(Exporter):
+class CsvExporter(AbstractExporter):
     def export(self, user_data: dict[int, dict[str, int | str]]):
         file_name = (
             f"{datetime.now().strftime('%Y-%m-%d_%H-%M')}_"

@@ -59,9 +59,7 @@ def main():
 
     if own_position == 0:
         own_position = int(
-            input(
-                "Could not read the current rank of the account. Please enter it: "
-            )
+            input("Could not read the current rank of the account. Please enter it: ")
         )
 
     last = own_position >= ALLIANCE_INFORMATION.current_members - 5
@@ -140,6 +138,7 @@ def main():
         )
         current_rank += 1
 
+    # TODO Add a way to configure the exporter outside of changing code
     get_exporter().export(user_data=data)
 
 
