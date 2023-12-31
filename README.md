@@ -13,7 +13,8 @@ This is a python implementation to get alliance members' power and merits.
 
 ### Files
 Copy `.env.example` to `.env` and fill it with the above install locations.  
-To get your `ADB_DEVICE_NAME`, run `adb devices`.
+To get your `ADB_DEVICE_NAME`, run `adb devices`.  
+To get your `GOOGLE_SPREADSHEET_ID`, copy the ID from the URL when the sheet is open.
 
 ### Emulator
 This tool uses pixel positions, so your emulator should have a size of **1280 x 720**.  
